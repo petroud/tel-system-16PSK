@@ -50,8 +50,8 @@ for cycle=1:length(SNR)
         t_Xq_d = (0:Ts:N/(1/T)-Ts);
         
         %Convolve with the SRRC filter
-        Xi_t = conv(ph,Xi_d);
-        Xq_t = conv(ph,Xq_d);
+        Xi_t = conv(ph,Xi_d)*Ts;
+        Xq_t = conv(ph,Xq_d)*Ts;
         
         t_Xi_t = (t(1)+t_Xi_d(1):Ts:t(end)+t_Xi_d(end));
         t_Xq_t = (t(1)+t_Xq_d(1):Ts:t(end)+t_Xq_d(end));
@@ -76,8 +76,8 @@ for cycle=1:length(SNR)
         Yq_t = Y.*(-sin(2*pi*F0*transpose(t_Xq_t)));
 
         %Convole the 2 signals with the SRRC filter
-        YI_f = conv(ph, Yi_t);
-        YQ_f = conv(ph, Yq_t);
+        YI_f = conv(ph, Yi_t)*Ts;
+        YQ_f = conv(ph, Yq_t)*Ts;
         
         t_YI_f = (t(1)+t_Xq_t(1):Ts:t(end)+t_Xq_t(end));
         t_YQ_f = (t(1)+t_Xq_t(1):Ts:t(end)+t_Xq_t(end));
@@ -110,7 +110,7 @@ for cycle=1:length(SNR)
     BLB(cycle) = SUB(cycle)/4;    
 end
 
-
+%%
 %Plot the outcomes of the experiment
 figure('Name','B2');
 semilogy(SNR, SUB);
