@@ -11,7 +11,7 @@ clear all;
 
 %% Constant Declaration
 N = 100;
-Nf = 2048;
+Nf = 2048
 T = 10^(-2);
 over = 10;
 Ts = T/over;
@@ -148,7 +148,7 @@ title('Periodgram for X');
 ylabel('Px(F)');
 xlabel('Frequency(Hz)');
 
-%% Á7
+%% ï¿½7
 
 %Create the Gaussian noise W(t)
 SNR = 20;
@@ -163,7 +163,7 @@ plot(t_XQt, Xt);
 hold on;
 plot(t_XQt, Y);
 hold off;
-title('X(t) before and after Gaussian noise');
+title(sprintf('X(t) before and after Gaussian noise with SNR=%d dB', SNR));
 xlabel('Time');
 ylabel('Magnitude');
 legend('X(t)','Y(t) = X(t) + W(t)');

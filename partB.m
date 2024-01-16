@@ -20,7 +20,7 @@ Fs=1/Ts;
 A=4;
 a=0.5;
 F0=200;
-K=1000;
+K=200;
 
 %Generate SRRC pulse, all cycles should be 
 %performed using the same SRRC filters.

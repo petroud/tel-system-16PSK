@@ -34,7 +34,7 @@ function [est_X, est_bit_seq] = detect_PSK_16(Y)
                 % ... and update the estimated symbol and bit sequence.
                 est_X(n,:) = X_m;
                 est_bit_seq(n,:) = de2bi(m, 4, 'left-msb');  % Convert integer m to 4-bit binary using Gray encoding
-            end
+             end
         end
     end
 end
